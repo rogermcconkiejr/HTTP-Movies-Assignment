@@ -83,7 +83,7 @@ const UpdateForm = props => {
         />
         <div className="baseline" />
 
-        <button>Update</button>
+        <button type="submit">Update</button>
       </form>
     </div>
   );
