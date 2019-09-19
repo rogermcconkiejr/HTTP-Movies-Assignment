@@ -36,8 +36,8 @@ const UpdateForm = props => {
     axios
     .put(`http://localhost:5000/api/movies/${movie.id}`, movie)
       .then(res => {
-        props.updateMovies(res.data);
-        props.history.push(`/movies/${movie.id}`);
+        setMovie(res.data);
+        window.location =`/movies/${movie.id}`;
         setMovie(initialMovie);
       })
       .catch(err => console.log(err.response));

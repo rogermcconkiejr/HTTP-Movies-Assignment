@@ -30,6 +30,7 @@ const App = () => {
       .delete(`http://localhost:5000/api/movies/${movie.id}`)
       .then(res => {
         setMovies(movie);
+        window.location = "/";
       })
       .catch(err => console.log(err.response));
   }
