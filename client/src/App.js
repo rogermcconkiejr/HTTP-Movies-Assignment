@@ -24,7 +24,15 @@ const App = () => {
         setMovies(movies);
       });
   }, []);
-
+  const deleteMovie = movie => {
+    // e.preventDefault();
+    axios
+      .delete(`http://localhost:5000/api/movies/${movie.id}`)
+      .then(res => {
+        setMovies(movie);
+      })
+      .catch(err => console.log(err.response));
+  }
   return (
     <>
       <SavedList list={savedList} />
@@ -32,7 +40,7 @@ const App = () => {
       <Route
         path="/movies/:id"
         render={props => {
-          return <Movie {...props} addToSavedList={addToSavedList} />;
+          return <Movie {...props} addToSavedList={addToSavedList} deleteMovie={deleteMovie}/>;
         }}
       />
     <Route
