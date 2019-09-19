@@ -18,7 +18,9 @@ const MovieCard = props => {
           {star}
         </div>
       ))}
+      <button>Edit Movie</button>
     </div>
+  
   );
 };
 
