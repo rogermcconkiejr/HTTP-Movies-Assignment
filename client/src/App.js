@@ -23,8 +23,9 @@ const App = () => {
         }}
       />
     <Route
-    path="/update-movie/:id"
-    render={props => <UpdateForm {...props} movie={savedList} />} //change added here
+      path="/update-movie/:id"
+      render={props => {
+        return <UpdateForm {...props} updateMovie={savedList} />}} //change added here
     />
     </>
   );
