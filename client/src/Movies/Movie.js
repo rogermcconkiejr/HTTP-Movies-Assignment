@@ -35,14 +35,21 @@ export default class Movie extends React.Component {
     if (!this.state.movie) {
       return <div>Loading movie information...</div>;
     }
-
+  console.log(this.props.history.push);
     return (
       <div className="save-wrapper">
-        <MovieCard movie={this.state.movie} />
+        <MovieCard movie={this.state.movie} deleteMovie={this.props.deleteMovie}/>
         <div className="save-button" onClick={this.saveMovie}>
           Save
         </div>
+        <button onClick= { () => this.props.history.push(`/update-movie/${this.state.movie.id}`)}>
+              Update
+        </button>
+        <button onClick= { () => this.props.deleteMovie(this.state.movie)}>
+              Delete
+        </button>
       </div>
+ 
     );
   }
 }
